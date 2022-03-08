@@ -11,23 +11,19 @@
 	--blue:#008cf5;
 }
 body {
-	min-height:100vh;
-	max-height:100vh;
-	/*padding:120px 5px 5px 5px; Note Pad Open*/
-	/*padding:120px 5px 5px 5px;/* Profile Open*/
+	height:100vh;
 }
 .container {
 	display:flex;
 	position:relative;
 	flex-direction:column;
-	justify-content:center;
+	justify-content:flex-start;
 	align-items:flex-start;
 	height:100%;
 	min-width:360px;
 	max-width:40em;
 	margin:0 auto;
 	overflow:hidden;
-	background-color:#fff;
 }
 #adcTask {
 	display:flex;
