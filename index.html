@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style.css">
+	<title>Lista de Atividades</title>
+</head>
+<body> 
+	<div class="container">
+		<header id="adcTask">
+			<h1 id="title">Lista de Atividades</h1>
+			<form class="form">
+				<div class="nameDiv">
+					<input type="text" id="nameTaskInput" placeholder="Enter the task name!" required>
+					<button type="submit" id="submitForm">Add Task</button>
+					<button type="button" id="moreInfoBttn"><ion-icon name="add" id="moreIcon"></ion-icon></button>
+				</div>
+				<div id="formMoreInfo">
+					<div>
+						<label for="moreInfo__date">Prazo</label>
+						<input type="date" id="moreInfo__date">
+					</div>
+					<div>
+						<label for="matetias">Matéria</label>
+						<select id="materias">
+							<option selected disabled value="">Selecione</option>
+							<option value="Projetos">Projetos</option>
+							<option value="Formação Cidadã">Formação Cidadã</option>
+							<option value="Matemática">Matemática</option>
+							<option value="Português">Português</option>
+							<option value="Ofc. de Redação">Oficina de Redação</option>
+							<option value="Biologia">Biologia</option>
+							<option value="Química">Química</option>
+							<option value="Física">Física</option>
+							<option value="História">História</option>
+							<option value="Grografia">Geografia</option>
+							<option value="Inglês">Inglês</option>
+							<option value="Espanhol">Espanhol</option>
+							<option value="Filosofia">Filosofia</option>
+							<option value="Sociologia">Sociologia</option>
+							<option value="Artes">Artes</option>
+							<option value="Mundo do Trabalho">Mundo do Trabalho</option>
+							<option value="Banco de Dados">Banco de Dados</option>
+							<option value="S.O.">S.O.</option>
+							<option value="Adm de Redes">Adm de Redes</option>
+							<option value="Interações Profissionais">Interações Profissionais</option>
+							<option value="Inglês Técnico">Inglês Técnico</option>
+							<option value="Mon. e Inst. de S.I">Montagem e Instalação 
+							de Sistemas Informáticos </option>
+							<option value="Softwares de Aplicação">Softwares de Aplicação</option>
+							<option value="Resolução de Problemas">Resolução de Problemas</option>
+							<option value="Meios de Comunicação de Dados">Meios de Comunicação de Dados</option>
+						</select>
+					</div>
+				</div>
+			</form>
+			<div class="filter">
+				<button id="filterBttn"><ion-icon name="filter" id="filterIcon"></ion-icon></button>
+				<div id="filterDiv">
+					<select id="filter__materias">
+						<option selected value="All">Todas</option>
+						<option value="Projetos">Projetos</option>
+						<option value="Formação Cidadã">Formação Cidadã</option>
+						<option value="Matemática">Matemática</option>
+						<option value="Português">Português</option>
+						<option value="Ofc. de Redação">Oficina de Redação</option>
+						<option value="Biologia">Biologia</option>
+						<option value="Química">Química</option>
+						<option value="Física">Física</option>
+						<option value="História">História</option>
+						<option value="Grografia">Geografia</option>
+						<option value="Inglês">Inglês</option>
+						<option value="Espanhol">Espanhol</option>
+						<option value="Filosofia">Filosofia</option>
+						<option value="Sociologia">Sociologia</option>
+						<option value="Artes">Artes</option>
+						<option value="Mundo do Trabalho">Mundo do Trabalho</option>
+						<option value="Banco de Dados">Banco de Dados</option>
+						<option value="S.O.">S.O.</option>
+						<option value="Adm de Redes">Adm de Redes</option>
+						<option value="Interações Profissionais">Interações Profissionais</option>
+						<option value="Inglês Técnico">Inglês Técnico</option>
+						<option value="Mon. e Inst. de S.I">Montagem e Instalação 
+						de Sistemas Informáticos </option>
+						<option value="Softwares de Aplicação">Softwares de Aplicação</option>
+						<option value="Resolução de Problemas">Resolução de Problemas</option>
+						<option value="Meios de Comunicação de Dados">Meios de Comunicação de Dados</option>
+					</select>
+					<div>
+						<label for="finishCheck">Concluídas</label>
+						<input type="checkbox" id="finishCheck">
+					</div>
+					<div>
+						<label for="proxCheck">Prazo mais proximo</label>
+						<input type="checkbox" id="proxCheck">
+					</div>
+				</div>
+				<button id="showMenu"><ion-icon name="menu" id="menuIcon"></ion-icon></button>
+			</div>
+		</header>
+		<div class="menuDiv">
+			<button id="closeMenu"><ion-icon name="close" id="menuIcon"></ion-icon></button>
+			<div>
+				<button id="showNotePad" class="menuBttn">Bloco de Notas</button>
+				<ion-icon name="reader-outline" class="menuIcon"></ion-icon>
+			</div>
+			<div>
+				<button id="showPerfil" class="menuBttn">Perfil</button>
+				<ion-icon name="person-outline" class="menuIcon"></ion-icon>
+			</div>
+			<div>
+				<button id="showSettings" class="menuBttn">Configurações</button>
+				<ion-icon name="settings-outline" class="menuIcon"></ion-icon>
+			</div>
+			<div>
+				<button id="showHelp" class="menuBttn">Ajuda</button>
+				<ion-icon name="help" class="menuIcon"></ion-icon>
+			</div>
+		</div>
+		<main id="list">
+			<div id="taskList">
+				
+			</div>
+		</main>
+		</div>
+		<div id="helpDiv">
+			<button id="closeHelp"><ion-icon name="close"></ion-icon></button>
+			<h1>Help</h1>
+			<p>Olá! Seja bem vindo ao To-Do List do Kauas criado especificamente para o 2 ano de Rede de Computadores.</p>
+			<p>Se você está aqui provavelmente está com duvida em alguma funcionalidade ou simplesmente não entendeu como se usa este site. Abaixo listarei as funcionalidades do Site para ajudá-los:</p>
+			<ul id="helpList">
+				<li><fieldset>
+					<legend><h2>Lista de Terefas</h2></legend>
+					<h3>Adicionar Tarefas</h3>
+					<p>Adicione qualquer atividade, você poderá adcionar uma materia e um prazo para esta atividade, para adcionar uma materia e um prazo para a atividades basta clicar no ícone <ion-icon name="add" id="moreIcon"></ion-icon> (adicionar) localizado na barra onde você colocará o nome da atividade.</p>
+					<p>Apenas o <strong>Nome</strong> da atividade é obrigatório, matéria e prazo são <strong>Opcionais</strong>.</p>
+					<h3>Filtrar Atividades</h3>
+					<p>Você poderá filtrar as atividades adcionadas pela sua materia, conclusão e prazo mais proxímo, basta clicar no ícone <ion-icon name="filter" id="filterIcon"></ion-icon> (filtro) que você verá as opções de filtragem.</p>
+					<p>Apenas as atividades com uma <strong>matéria selecionada</strong> serão filtradas no filtro de matérias, e somente as atividades <strong>com prazo</strong> serão filtradas pelo filtro de prazo mais proxímo.</p>
+					<h3>Botões</h3>
+					<p>Ao criar uma atividade nela terá 3 botões:</p>
+					<p>O botão de <strong>Editar</strong> serve para mudar o nome ou o prazo da atividada, <strong>não é possível mudar</strong> a matéria.</p>
+					<p>O botão de <strong>Apagar</strong> serve para voçê apagar uma atividade, após ser apagada uma atividade não poderá ser recuperada.</p>
+					<p>E por fim, o botão de <strong>Concluído</strong> que serve para marcar uma atividade como concluída, apertar o botão a atividade some e só poderá ser vista clicando no filtro de "concluidas", no botão haverá a data de conclusão da atividade.</p>
+					<p>Caso o prazo da atividade tenha passado o botão exibirá um texto alertando sobre o atraso e ainda dizendo a quantidade de dias de atraso, além dos botões da atividade mudarem para a cor vermelha.</p>
+				</fieldset></li>
+				<li><fieldset>
+					<legend><h2>Perfil</h2></legend>
+					<p>Para acessar o perfil basta clicar no ícone <ion-icon name="ellipsis-vertical-outline" id="menuIcon"></ion-icon> (Menu) e depois clicar em Perfil. No Perfil terá uma foto genérica e o nome que você informou no seu primeiro acesso, abaixo terá
+					um <strong>resumo de toda sua atividade no site</strong>, quantidade de notas, quantidade de tarefas, quantidade de tarefas pendêntes, concluídas com atraso e com antecedência.</p>
+					<p>No perfil você também poderá ver as atividades concluídas com atraso, com antecedêmcia e as pemdentes, basta clicar nos botões <strong>"Pendentes", "Antecedência" e "Atraso"</strong>.</p>
+				</fieldset></li>
+				<li><fieldset id="notas">
+				<legend><h2>Bloco de Notas</h2></legend>
+				<h3>Adcionando Notas</h3>
+				<p>Para adcionar jovas notas basta clicar no botão <strong>+</strong> no canto inferior direito, após o clique aparecerá uma caixa onde você colocará o nome da nota, caso o nome não seja passado a nota se chamará "Documento sem nome".</p>
+				<h3>Editando as notas</h3>
+				<p>Ao criar uma nota basta clicar nela para abri-la em tela cheia, para edita-la basta clicar no botão <ion-icon name="create-outline"></ion-icon> (escrever), você também poderá editar o nome da nota.</p>
+				<p>Ao apertar "Enter" será adcionado um <strong>&ltbr&gt</strong>, isso é necessário para que a formatação e as quebras de linha funcionem.</p>
+				<h3>Salvando as Notas</h3>
+				<p>Para salvar as alterações clique em <ion-icon name="save-outline"></ion-icon> (salvar) que todas as alterações serão salvas, mas caso você esqueça as alterações <strong>serão salvas automaticamente</strong> após qualquer mudança feita na nota.</p>
+				<h3>Excluindo Notas</h3>
+				<p>Para excluir basta clicar em <ion-icon name="trash-outline"></ion-icon> (lixo) que a nota será <strong>permanentemente</strong> apagada.</p>
+				<h3>Informações sobre a nota</h3>
+				<p>Para ver algumas ingormações sobre a nota basta clicar em <ion-icon name="information-circle-outline"></ion-icon> (info), você verá as seguintes informações: Nome, Data de Criação e Último Acesso.</p>
+				</fieldset></li>
+			</ul>
+		</div>
+		<div id="sttsDiv">
+			<button id="closeStts"><ion-icon name="close"></ion-icon></button>
+			<h1>Configurações</h1>
+			<div>
+				<p>As alterações serão salvas automaticamente ao fechar as configurações.</p>
+			</div>
+			<div>
+				<label for="sttsName">Nome</label>
+				<input id="sttsName">
+			</div>
+			<div id="gitPhoto">
+				<form id="githubPhoto__form">
+					<div>
+						<label for="githubName">Usuário GitHub</label>
+						<input type="text" id="githubName">
+					</div>
+					<div>
+						<button type="submit" id="applyGitPhoto">Aplicar</button>
+						<button type="reset" id="resetGitPhoto">Remover</button>
+					</div>
+				</form>
+				<p>Insira seu nome de usuário do GitHub para que a sua foto da plataforma seja utilizada.</p>
+			</div>
+			<label for="themeDiv">Tema</label>
+			<div id="themeDiv">
+				<div>
+					<label for="ligth">Claro</label>
+					<input type="radio" class="selectTheme" id="ligth" value="Claro">
+				</div>
+				<div>
+					<label for="dark">Escuro</label>
+					<input type="radio"  class="selectTheme" id="dark" value="Escuro" >
+				</div>
+			</div>
+			<h2>Cores</h2>
+			<div class="colorDiv">
+				<label for="colorTaskPendente">Atividades (Pendentes)</label>
+				<input type="color" id="colorTaskPendente" class="colorStts" value="#008cf5">
+			</div>
+			<div class="colorDiv">
+				<label for="colorTaskConcluidas">Atividades (Concluídas)</label>
+				<input type="color" id="colorTaskConcluidas" class="colorStts" value="#008cf5">
+			</div>
+			<div class="colorDiv">
+				<label for="colorTaskAtraso">Atividades (Atrasadas)</label>
+				<input type="color" id="colorTaskAtraso" class="colorStts" value="#dc143c">
+			</div>
+			<div class="colorDiv">
+				<label for="colorNotes">Notas</label>
+				<input type="color" id="colorNotes" class="colorStts" value="#91a4c2">
+			</div>
+			<div>
+				<button id="resetColors">Resetar Cores</button>
+			</div>
+			<div id="deleteAllDiv">
+				<button id="deleteAll">Deletar Tudo</button>
+				<p>Ao clicar no botão acima todos as suas <strong>informações, atividades e notas</strong> serão <span>excluídas permanentemente</span>.</p>
+			</div>
+		</div><!--sttsDiv-->
+		<div id="notePadDiv">
+			<header id="notePadHeader">
+				<div>
+					<button id="closeNotePad"><ion-icon name="arrow-back-outline"></ion-icon></button>
+					<h1 id="titleNotePad">Notas</h1>
+					<button id="menuNotePad"><ion-icon name="ellipsis-vertical-outline" id="menuNoteIcon"></ion-icon></button>
+				</div>
+				<div>
+					<input type="search" id="searchNote">
+				</div>
+			</header>
+			<main id="noteMain">
+				<div class="infoDiv">
+					<div>
+						<label for="nameNoteInfo">Nome:</label>
+						<input id="noteNameInfo" readonly>
+					</div>
+					<div>
+						<label for="noteCreateInfo">Criado em:</label>
+						<input id="noteCreateInfo" readonly>
+					</div>
+					<div>
+						<label for="noteLastAcessInfo">Último acesso:</label>
+						<input id="noteLastAcessInfo" readonly>
+					</div>
+				</div>
+			</main>
+	<!--	<div id="ferramentasNote">
+				
+			</div>-->
+				<div id="newNote">
+					<form id="formNote">
+						<h1>Nome da Nota</h1>
+						<input id="newNoteInput">
+						<div id="newNoteBttn">
+							<button id="newNoteCancel" type="button">Cancel</button>
+							<button id="newNoteOk" type="submit" >Ok</button>
+						</div>
+					</form>
+				</div>
+				<div id="addNote">
+					<button id="addNoteBttn">+</button>
+				</div>
+		<!--		<div id="formatacaoNote">
+					<button id=""><ion-icon name=""></ion-icon></button>
+				</div>-->
+		</div>
+		
+		<div id="profileDiv">
+			<header id="profile">
+				<img alt="Foto de Perfil" id="profilePicture">
+				<!--https://github.com/KauaLima06.png-->
+				<p id="profileName"></p>
+			</header>
+			<button id="closeProfile"><ion-icon name="close"></ion-icon></button>
+			<main id="estatisticas">
+				<div class="total">
+					<label for="totalNotes">Total de Notas</label>
+					<input type="text" id="totalNotes" readonly>
+				</div>
+				<div class="total">
+					<label for="totalTasks">Total de Atividades</label>
+					<input type="text" id="totalTasks" readonly>
+				</div>
+				<div class="total">
+					<label for="totalPendente">Pendentes</label>
+					<input type="text" id="totalPendente" readonly>
+				</div>
+				<div class="total">
+					<label for="totalAtraso">Concluídas com Atraso</label>
+					<input type="text" id="totalAtraso" readonly>
+				</div>
+				<div class="total">
+					<label for="totalAntecedencia">Concluídas com Antecedência</label>
+					<input type="text" id="totalAntecedencia" readonly>
+				</div>
+				<div id="estatisticaBttn">
+					<button id="pendenteBttn">Pendentes</button>
+					<button id="antecedenciaBttn">Antecedência</button>
+					<button id="atrasoBttn">Atraso</button>
+				</div>
+				<div id="estatisticaTaskList">
+					
+				</div>
+			</main>
+		</div>
+<script type="text/javascript" src="./script.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
