@@ -11,6 +11,7 @@ acessos++
 let namePerson = localStorage.getItem('profile-name') !== null ? localStorage.getItem('profile-name') : 'Profissional';
 let user = localStorage.getItem('profile-picture') !== null ? localStorage.getItem('profile-picture') : '';
 const profileName = document.querySelector('#profileName');
+window.addEventListener('load', ()=>{
 if(acessos == '1'){
 	localStorage.setItem('Acessos', `${acessos}`);
 	namePerson = prompt('Seu nome:');
@@ -18,6 +19,7 @@ if(acessos == '1'){
 	const nameLocalStorage = localStorage.getItem('profile-name');
 	profileName.innerText = localStorage.getItem('profile-name') !== null ? `${localStorage.getItem('profile-name')}` : 'Profissional';
 }
+});
 const container = document.querySelector('.container');
 const body = document.getElementsByTagName('body')[0];
 const profileDiv = document.querySelector('#profileDiv');
