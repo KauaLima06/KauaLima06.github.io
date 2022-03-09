@@ -31,7 +31,7 @@ const taskList = document.querySelector('#taskList');
 const showMenu = document.querySelector('#showMenu');
 const showPerfil = document.querySelector('#showPerfil');
 const profilePicture = document.querySelector('#profilePicture');
-profilePicture.src = localStorage.getItem('profile-picture') !== null || localStorage.getItem('profile-picture') !== '' ? `https://github.com/${user}.png` : './Imgs/profile-picture.jpg';
+profilePicture.src = localStorage.getItem('profile-picture') !== null || localStorage.getItem('profile-picture') !== '' ? `https://github.com/${user}.png` : './profile-picture.jpg';
 const gitPhotoForm = document.querySelector('#githubPhoto__form');
 const gitHubName = document.querySelector('#githubName');
 const closeProfile = document.querySelector('#closeProfile');
